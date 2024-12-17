@@ -161,13 +161,13 @@ def askdish(dish_img, str_user_diet):
 
 
 # EC2 연결 설정
-ssh_host = ''
+ssh_host = '54.180.105.172'
 ssh_user = 'ubuntu'
-ssh_key_file = 'foodiebuddy-ec2-key.pem'
+ssh_key_file = 'foodiebuddy-ec2-key.pem'  # 구글 코랩에 PEM 키 파일을 업로드한 후 경로를 입력
 
 # RDS 데이터베이스 설정
-rds_host = ''
-rds_port = 3306
+rds_host = 'foodiebuddy-rds.clo8m062s7ci.ap-northeast-2.rds.amazonaws.com'
+rds_port = 3306 
 
 server = SSHTunnelForwarder(
     (ssh_host, 22),
@@ -222,7 +222,6 @@ for k, v in user_info.items():
 str_user_diet = str_user_diet[:-2]+'.'
 
 #물어볼 밑반찬 사진
-#사진을 또보내고싶으면 이 전체 플로우를 다시 시작하는 방향으로...?!
 dish_img = "img_path"
 
 #함수 실행

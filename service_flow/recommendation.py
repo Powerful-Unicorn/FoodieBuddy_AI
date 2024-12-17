@@ -40,7 +40,7 @@ def search_ingredients(dish_name):
 
   result_msg_element = root.find('.//result_Msg')
 
-    if result_msg_element is None or result_msg_element.text == '요청 데이터 없음':
+  if result_msg_element is None or result_msg_element.text == '요청 데이터 없음':
       return "No information"
   else:
       item = root.find('body/items').findall('item')[0]
@@ -169,13 +169,13 @@ recommend_prompt = f"""
 
 
 # EC2 연결 설정
-ssh_host = ''
+ssh_host = '54.180.105.172'
 ssh_user = 'ubuntu'
-ssh_key_file = 'foodiebuddy-ec2-key.pem'
+ssh_key_file = 'foodiebuddy-ec2-key.pem'  # 구글 코랩에 PEM 키 파일을 업로드한 후 경로를 입력
 
 # RDS 데이터베이스 설정
-rds_host = ''
-rds_port = 3306
+rds_host = 'foodiebuddy-rds.clo8m062s7ci.ap-northeast-2.rds.amazonaws.com'
+rds_port = 3306 
 
 server = SSHTunnelForwarder(
     (ssh_host, 22),
