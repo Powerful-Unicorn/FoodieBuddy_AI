@@ -222,7 +222,6 @@ for k, v in user_info.items():
 str_user_diet = str_user_diet[:-2]+'.'
 
 #물어볼 밑반찬 사진
-#사진을 또보내고싶으면 이 전체 플로우를 다시 시작하는 방향으로...?!
 dish_img = "img_path"
 
 #함수 실행
