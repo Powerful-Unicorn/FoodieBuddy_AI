@@ -38,6 +38,7 @@ stability diffusion key 발급: https://platform.stability.ai/docs/api-reference
   : 메뉴판 사진 설명 추천 채팅을 구현한 코드입니다.
 
 
+실행 방법은 google colab을 기반으로 설명을 작성하였습니다.
 ## How to build
 1. 이 레포지토리를 아래와 같이 clone합니다.
 ```bash
@@ -48,3 +49,20 @@ stability diffusion key 발급: https://platform.stability.ai/docs/api-reference
 ```bash
 !python 파일경로
 ```
+
+## How to install
+1. Python 3.8이상이 설치되어 있어야 합니다.
+2. 라이브러리 설치가 필요한 경우 아래의 코드를 활용하여 설치하면 됩니다.
+```bash
+!pip install 라이브러리_이름
+```
+
+## Description of used open source
+1. Gpt-4o api 활용
+: 사용자와 실시간 대화를 통해 질문을 이해하고 적절한 응답을 생성하며, 사용자의 음식 관련 요구사항(예: 메뉴 추천, 식재료 설명 등)을 반영한 자연스러운 대화를 제공합니다.<br/>
+아래의 링크에서 제시된 코드를 확장하여 채팅 코드를 작성하였습니다.<br/>
+https://platform.openai.com/docs/api-reference/chat
+3. Stable diffusion api 활용
+: 사용자에게 메뉴를 추천 하거나 설명할 떄 사용자 이해를 돕기 위해 이미지를 생성합니다.<br/>
+아래의 링크에서 제시된 코드를 활용하여 이미지 생성 코드를 작성하였습니다.<br/>
+https://platform.openai.com/docs/api-reference/chat
