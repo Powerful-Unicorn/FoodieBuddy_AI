@@ -1,4 +1,6 @@
 # FoodieBuddy_AI
+
+## Description of FoodieBuddy_AI
 이 레포지토리는 앱 서비스 FoodieBuddy의 AI기술 구현을 위한 코드입니다.<br/>
 로컬 환경에서 구현할 수 있는 코드를 포함하고 있습니다.<br/>
 
@@ -31,24 +33,33 @@ stability diffusion key 발급: https://platform.stability.ai/docs/api-reference
 ### Directory 2. service_flow
 : 위의 기능들을 gpt-4o와의 채팅과 결합하여, 각 채팅 기능별로 통합한 코드들의 디렉토리입니다. '로컬' 환경에서 구현하는 코드이므로, 아래의 코드에서 사용된 stability diffusion는 api를 활용하는 버전의 코드입니다. 
 - recommendation.py<br/>
-  : 한식 메뉴 추천 채팅을 구현한 코드입니다.
+  : 한식 메뉴 추천 채팅을 구현한 코드입니다.<br/>
+  이 코드에서는 17번쨰 행에서 gpt-4o api key를, 33번째 행에서 농촌진흥청 식재료 데이터 요청을 위한 API key를 입력해야 합니다.<br/>
+  또한, 71번쨰 행에서 stable diffusion api key를 입력해야 합니다.<br/>
+  마지막으로, db 활용을 위해 199번째 행에 DB 접근을 위한 password를 입력해야 합니다.
 - askdish.py<br/>
-  : 밑반찬 사진 설명 채팅을 구현한 코드입니다.
+  : 밑반찬 사진 설명 채팅을 구현한 코드입니다.<br/>
+  이 코드에서는 15번쨰 행에서 gpt-4o api key를, 31번째 행에서 농촌진흥청 식재료 데이터 요청을 위한 API key를 입력해야 합니다.<br/>
+  마지막으로, db 활용을 위해 231번째 행에 DB 접근을 위한 password를 입력해야 합니다.
 - askmenu.py<br/>
-  : 메뉴판 사진 설명 추천 채팅을 구현한 코드입니다.
+  : 메뉴판 사진 설명 추천 채팅을 구현한 코드입니다.<br/>
+  이 코드에서는 16번쨰 행에서 gpt-4o api key를 , 32번째 행에서 농촌진흥청 식재료 데이터 요청을 위한 API key를 입력해야 합니다.<br/>
+  또한, 70번쨰 행에서 stable diffusion api key를 입력해야 합니다.<br/>
+  마지막으로, db 활용을 위해 191번째 행에 DB 접근을 위한 password를 입력해야 합니다.
 
 
-실행 방법은 google colab을 기반으로 설명을 작성하였습니다.
 ## How to build
+(실행 방법은 google colab을 기반으로 설명을 작성하였습니다.)
 1. 이 레포지토리를 아래와 같이 clone합니다.
 ```bash
 !git clone https://github.com/JihooChung/FoodieBuddy_AI.git
 !cd FoodieBuddy_AI
 ```
-2. 아래의 코드를 통해 파일을 하나씩 실행해볼 수 있습니다. 이떄 위의 디렉토리 설명에서 제시한 api key, password를 입력해야 정상적으로 실행됩니다.
+2. 아래의 코드를 통해 파일을 하나씩 실행해볼 수 있습니다. 이떄 위의 디렉토리 설명에서 제시한대로 api key, password를 입력해야 정상적으로 실행됩니다.
 ```bash
 !python 파일경로
 ```
+
 
 ## How to install
 1. Python 3.8이상이 설치되어 있어야 합니다.
@@ -56,6 +67,7 @@ stability diffusion key 발급: https://platform.stability.ai/docs/api-reference
 ```bash
 !pip install 라이브러리_이름
 ```
+
 
 ## Description of used open source
 1. Gpt-4o api 활용
@@ -65,4 +77,4 @@ https://platform.openai.com/docs/api-reference/chat
 3. Stable diffusion api 활용
 : 사용자에게 메뉴를 추천 하거나 설명할 떄 사용자 이해를 돕기 위해 이미지를 생성합니다.<br/>
 아래의 링크에서 제시된 코드를 활용하여 이미지 생성 코드를 작성하였습니다.<br/>
-https://platform.openai.com/docs/api-reference/chat
+https://platform.stability.ai/docs/api-reference#tag/Generate/paths/~1v2beta~1stable-image~1generate~1ultra/post
